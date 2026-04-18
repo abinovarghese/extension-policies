@@ -6,37 +6,60 @@
   <title>Privacy Policy — TextClean</title>
   <style>
     body { font-family: system-ui, -apple-system, sans-serif; max-width: 680px; margin: 40px auto; padding: 0 20px; line-height: 1.7; color: #1e293b; }
-    h1 { font-size: 1.5rem; border-bottom: 2px solid #3b82f6; padding-bottom: 8px; }
+    h1 { font-size: 1.5rem; border-bottom: 2px solid #8b5cf6; padding-bottom: 8px; }
     h2 { font-size: 1.1rem; margin-top: 2rem; color: #334155; }
     .updated { color: #64748b; font-size: 0.9rem; }
-    a { color: #3b82f6; }
+    a { color: #6366f1; }
+    code { background: #f1f5f9; padding: 1px 6px; border-radius: 4px; font-size: 0.9em; }
   </style>
 </head>
 <body>
   <h1>Privacy Policy — TextClean</h1>
-  <p class="updated">Last updated: March 29, 2026</p>
+  <p class="updated">Last updated: April 18, 2026 · Applies to TextClean v1.2.x</p>
+
+  <h2>Summary</h2>
+  <p>TextClean runs entirely in your browser. It does <strong>not</strong> send the text you transform — or anything else — to any server. There is no account, no sign-in, no telemetry, and no third-party analytics.</p>
 
   <h2>Data Collection</h2>
-  <p>TextClean does <strong>not</strong> collect, store, or transmit any personal data to external servers. All text processing happens entirely within your browser. No text you transform is ever sent anywhere.</p>
+  <p>TextClean does not collect, store, or transmit any personal data to external servers. Every transform — case changes, cleanup, encoding, custom regex, chains — is executed locally in your browser tab.</p>
 
   <h2>Data Storage</h2>
-  <p>TextClean stores only your usage preferences (favorite transforms, usage count) locally in your browser using the Chrome Storage API. This data never leaves your device and is deleted when you uninstall the extension.</p>
+  <p>TextClean stores the following locally on your device using the browser's Storage API:</p>
+  <ul>
+    <li>Preferences (theme, selected options)</li>
+    <li>Favorite and recently-used transforms</li>
+    <li>Custom transforms you create (regex find-&amp;-replace definitions)</li>
+    <li>Saved chains (sequences of transforms you build)</li>
+    <li>Local usage counters (streak, transforms applied) — numbers only, never the text itself</li>
+    <li>Optional local history of transformed snippets (can be disabled and cleared from Settings)</li>
+  </ul>
+  <p>None of this is ever uploaded to a server operated by TextClean.</p>
+
+  <h2>Chrome Sync (optional)</h2>
+  <p>If you have Chrome Sync enabled on your browser, a small subset of preferences (such as favorites and saved chains) may sync across your signed-in devices via Google's infrastructure, governed by <a href="https://policies.google.com/privacy">Google's privacy policy</a>. The text you transform is never synced. You can disable this behavior by turning off Chrome Sync.</p>
 
   <h2>Permissions Explained</h2>
   <ul>
-    <li><strong>contextMenus</strong> — Adds transform options to your right-click menu when text is selected.</li>
-    <li><strong>activeTab</strong> — Allows the extension to interact with the current page to replace selected text.</li>
-    <li><strong>storage</strong> — Stores your preferences locally on your device.</li>
+    <li><code>contextMenus</code> — Adds transform options to your right-click menu when text is selected.</li>
+    <li><code>activeTab</code> — Lets the extension read your current selection on the active tab, in response to an action you take (menu click, keyboard shortcut, or toolbar click).</li>
+    <li><code>tabs</code> — Used to detect whether the active tab is a restricted URL (e.g., chrome://) so the extension can show an appropriate message instead of failing silently. No browsing history is read.</li>
+    <li><code>storage</code> — Stores your preferences, favorites, custom transforms, chains, and local counters on your device.</li>
+    <li><code>sidePanel</code> — Powers the TextClean workbench that opens in Chrome's side panel.</li>
+    <li><code>scripting</code> — Lets keyboard shortcuts (e.g., ⌘⇧U) apply a transform to your selection on demand, by executing a tiny in-page script only at the moment you trigger the shortcut.</li>
   </ul>
+  <p>TextClean does not request <code>host_permissions</code>, cannot read content on pages you haven't interacted with, and never communicates with remote servers.</p>
+
+  <h2>Analytics &amp; Telemetry</h2>
+  <p>None. TextClean contains no analytics SDKs, tracking pixels, or telemetry. We have zero visibility into how you use the extension.</p>
 
   <h2>Third-Party Services</h2>
-  <p>If you purchase the Pro version, payments are processed by <a href="https://extensionpay.com">ExtensionPay</a> and <a href="https://stripe.com">Stripe</a>. We do not see or store your payment details. ExtensionPay's privacy policy applies to the payment transaction.</p>
+  <p>TextClean does not integrate any third-party services. There are no payment processors, no cloud sync services, and no external APIs.</p>
 
-  <h2>Analytics</h2>
-  <p>TextClean does not include any analytics, tracking pixels, or telemetry. We have zero visibility into how you use the extension.</p>
+  <h2>Children's Privacy</h2>
+  <p>TextClean is a general-purpose text utility. It does not knowingly collect data from anyone, including children under 13.</p>
 
-  <h2>Changes</h2>
-  <p>If this policy changes, the updated version will be posted here with a new date.</p>
+  <h2>Changes to this Policy</h2>
+  <p>If this policy changes, the updated version will be posted here with a new date. Material changes will be noted in the extension's release notes.</p>
 
   <h2>Contact</h2>
   <p>Questions? Email <a href="mailto:dev.abinovarghese@gmail.com">dev.abinovarghese@gmail.com</a></p>
